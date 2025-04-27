@@ -58,4 +58,4 @@ The project includes a front-end built with **HTML**, **CSS**, and **JavaScript*
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Ciprian-Popescu-03/CarParkingReservation.git
