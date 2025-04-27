@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Parking Spaces</title>
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar">
+  <div class="navbar-left">
+    <a href="/">Home</a>
+    <a href="/parking/spaces">Find Parking</a>
+    <a href="/reservations">My Reservations</a>
+    <a href="/contact">Contact</a>
+    <a href="/about">About Us</a>
+  </div>
+  <div class="navbar-right">
+    <span th:if="${isLoggedIn}">
+      <a href="/account">Account</a>
+      <a href="/auth/logout">Log Out</a>
+    </span>
+    <span th:unless="${isLoggedIn}">
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+    </span>
+  </div>
+</div>
+
+<div class="parking-list-page">
+  <h1>Parking Spaces</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>Parking Name</th>
+      <th>Location</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Dynamically generate rows -->
+    <tr th:each="space : ${spaces}">
+      <td th:text="${space.name}"></td>
+      <td th:text="${space.location}"></td>
+      <td th:text="${space.isReserved ? 'Reserved' : 'Available'}"></td>
+      <td>
+        <button th:if="${!space.isReserved}"
+                th:onclick="'reserveSpace(' + ${space.id} + ')'">
+          Reserve
+        </button>
+        <p th:if="${space.isReserved}">Reserved</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function reserveSpace(id) {
+    fetch(`/parking/reserve/${id}`, { method: 'POST' })
+            .then(response => {
+              if (!response.ok) throw new Error("Failed to reserve parking space");
+              return response.text();
+            })
+            .then(message => {
+              alert(message); // Notify the user
+              location.reload(); // Reload the page
+            })
+            .catch(error => console.error(error));
+  }
+</script>
+
+<footer>
+  <p>&copy; 2025 City Parking. All rights reserved.</p>
+</footer>
+</body>
+</html>

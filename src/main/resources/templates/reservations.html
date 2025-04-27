@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>My Reservations</title>
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+        <a href="/">Home</a>
+        <a href="/parking/spaces">Find Parking</a>
+        <a href="/reservations">My Reservations</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About Us</a>
+    </div>
+    <div class="navbar-right">
+    <span th:if="${isLoggedIn}">
+      <a href="/account">Account</a>
+      <a href="/auth/logout">Log Out</a>
+    </span>
+        <span th:unless="${isLoggedIn}">
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+    </span>
+    </div>
+</div>
+
+
+
+<!-- My Reservations Section -->
+<div class="reservations">
+    <h1>My Reservations</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Thymeleaf Loop to Render Reserved Parking Spaces -->
+        <tr th:each="space : ${reservations}">
+            <td th:text="${space.id}"></td>
+            <td th:text="${space.name}"></td>
+            <td th:text="${space.location}"></td>
+            <td>Reserved</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 City Parking. All rights reserved.</p>
+</footer>
+</body>
+</html>

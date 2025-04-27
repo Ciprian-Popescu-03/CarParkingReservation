@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Account</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+        <a href="/">Home</a>
+        <a href="/parking/spaces">Find Parking</a>
+        <a href="/reservations">My Reservations</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About Us</a>
+    </div>
+    <div class="navbar-right">
+    <span th:if="${isLoggedIn}">
+      <a href="/account">Account</a>
+      <a href="/auth/logout">Log Out</a>
+    </span>
+        <span th:unless="${isLoggedIn}">
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+    </span>
+    </div>
+</div>
+
+
+
+
+<div class="account-page">
+    <h1>My Account</h1>
+    <div class="account-details">
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p><strong>Role:</strong> <span th:text="${user.role}"></span></p>
+    </div>
+</div>
+</body>
+</html>

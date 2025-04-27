@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>About Us</title>
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+        <a href="/">Home</a>
+        <a href="/parking/spaces">Find Parking</a>
+        <a href="/reservations">My Reservations</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About Us</a>
+    </div>
+    <div class="navbar-right">
+    <span th:if="${isLoggedIn}">
+      <a href="/account">Account</a>
+      <a href="/auth/logout">Log Out</a>
+    </span>
+        <span th:unless="${isLoggedIn}">
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+    </span>
+    </div>
+</div>
+
+
+
+<!-- About Us Section -->
+<section class="about">
+    <h1>About City Parking</h1>
+    <p>City Parking is a platform designed to make finding and reserving parking spaces in your city a seamless experience.</p>
+    <h2>Our Mission</h2>
+    <p>We aim to reduce parking-related stress by providing real-time availability, easy reservations, and a user-friendly experience.</p>
+    <h2>Our Vision</h2>
+    <p>To be the leading parking solution provider, helping cities optimize space and reduce traffic congestion.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 City Parking. All rights reserved.</p>
+</footer>
+</body>
+</html>

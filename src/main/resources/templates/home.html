@@ -1,0 +1,65 @@
+<!-- Home Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>City Parking</title>
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar">
+  <div class="navbar-left">
+    <a href="/">Home</a>
+    <a href="/parking/spaces">Find Parking</a>
+    <a href="/reservations">My Reservations</a>
+    <a href="/contact">Contact</a>
+    <a href="/about">About Us</a>
+  </div>
+  <div class="navbar-right">
+    <span th:if="${isLoggedIn}">
+      <a href="/account">Account</a>
+      <a href="/auth/logout">Log Out</a>
+    </span>
+    <span th:unless="${isLoggedIn}">
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+    </span>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Welcome to City Parking</h1>
+    <p>Find and reserve your parking space in seconds!</p>
+    <div class="hero-buttons">
+      <a href="/parking/spaces" class="btn">Find Parking</a>
+      <a href="/reservations" class="btn-secondary">View Reservations</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="feature">
+    <h2>Real-Time Availability</h2>
+    <p>See up-to-date parking space availability across the city.</p>
+  </div>
+  <div class="feature">
+    <h2>Easy Reservations</h2>
+    <p>Reserve your spot with just one click and enjoy a hassle-free experience.</p>
+  </div>
+  <div class="feature">
+    <h2>Convenient Locations</h2>
+    <p>Choose from a variety of prime parking locations in your city.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 City Parking. All rights reserved.</p>
+</footer>
+</body>
+</html>

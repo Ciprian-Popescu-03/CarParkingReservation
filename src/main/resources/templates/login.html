@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>City Parking</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+        <a href="/">Home</a>
+        <a href="/parking/spaces">Find Parking</a>
+        <a href="/reservations">My Reservations</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About Us</a>
+    </div>
+    <div class="navbar-right">
+    <span th:if="${isLoggedIn}">
+      <a href="/account">Account</a>
+      <a href="/auth/logout">Log Out</a>
+    </span>
+        <span th:unless="${isLoggedIn}">
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Sign Up</a>
+    </span>
+    </div>
+</div>
+
+
+
+<div class="auth-page">
+    <h1>Login</h1>
+    <form action="/auth/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/auth/signup">Sign up here</a></p>
+</div>
+
+
+
+</body>
+</html>

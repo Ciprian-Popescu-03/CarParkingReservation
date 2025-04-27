@@ -1,0 +1,500 @@
+/* General Reset */
+body, h1, h2, p, a, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #004a99;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures proper spacing between sections */
+    padding: 0.5em 1em;
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #002d66;
+}
+
+.navbar div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em; /* Adds space between Login, Sign Up, and Account */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+
+    .navbar div {
+        gap: 0.25em;
+    }
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #f5f5f5;
+    padding: 1em 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: auto; /* Ensures it stays at the bottom */
+    width: 100%;
+}
+
+/* Optional: Style adjustments for better appearance */
+footer p {
+    margin: 0;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* ------------------------ */
+/* Parking List Page */
+/* ------------------------ */
+
+.parking-list-page h1 {
+    text-align: center;
+    color: #004a99;
+    margin-bottom: 1em;
+    font-size: 2em; /* Adjust size as needed */
+    font-weight: bold; /* Make the heading stand out */
+    line-height: 1.5; /* Improve readability */
+}
+
+
+.parking-list-page {
+    padding: 2em;
+    max-width: 90%;
+    margin: 2em auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.parking-list-page h1 {
+    text-align: center;
+    color: #004a99;
+    margin-bottom: 1em;
+}
+
+.parking-list-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: 1em;
+    color: #333;
+}
+
+.parking-list-page th,
+.parking-list-page td {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+}
+
+.parking-list-page th {
+    background-color: #004a99;
+    color: white;
+    font-weight: bold;
+}
+
+.parking-list-page td button {
+    padding: 0.5em 1em;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.parking-list-page td button:hover {
+    background-color: #cc5200;
+}
+
+.parking-list-page td button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ------------------------ */
+/* Home Page */
+/* ------------------------ */
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1506521781263-d8422e82f27a?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFya2luZ3xlbnwwfHwwfHx8MA%3D%3D') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6em 1em;
+    background-position: center 10%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    color: #f4f4f4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text p {
+    font-size: 1.4em;
+    margin-bottom: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.hero-buttons .btn, .hero-buttons .btn-secondary {
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn {
+    background-color: #ff6600;
+    color: white;
+}
+
+.hero-buttons .btn-secondary {
+    background-color: #0066cc;
+    color: white;
+}
+
+.hero-buttons .btn:hover {
+    background-color: #cc5200;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: #004a99;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 3em 2em;
+    gap: 2em;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 2em auto;
+}
+
+.feature {
+    text-align: center;
+    padding: 1em;
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature h2 {
+    color: #004a99;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #004a99;
+    color: white;
+    padding: 1em 0;
+    margin-top: 3em;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+
+/* ------------------------ */
+/* My Reservations Page */
+/* ------------------------ */
+.reservations {
+    padding: 2em;
+    max-width: 90%;
+    margin: 2em auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservations h1 {
+    text-align: center;
+    color: #004a99;
+    margin-bottom: 1em;
+}
+
+.reservations table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    color: #333;
+}
+
+.reservations th, .reservations td {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+}
+
+.reservations th {
+    background-color: #004a99;
+    color: white;
+    font-weight: bold;
+}
+
+/* ------------------------ */
+/* Contact Us Page */
+/* ------------------------ */
+.contact {
+    padding: 2em;
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.contact h1 {
+    color: #004a99;
+    margin-bottom: 1em;
+}
+
+.contact label {
+    display: block;
+    margin: 1em 0 0.5em;
+    font-weight: bold;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    margin-top: 1em;
+    padding: 0.8em 2em;
+    background-color: #004a99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #002d66;
+}
+
+/* ------------------------ */
+/* About Us Page */
+/* ------------------------ */
+.about {
+    padding: 2em;
+    max-width: 800px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.about h1, .about h2 {
+    color: #004a99;
+    margin-bottom: 1em;
+}
+
+.about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    color: #555;
+}
+
+
+/* ------------------------ */
+/* Login & Signup Pages */
+/* ------------------------ */
+
+.auth-page {
+    padding: 2em;
+    max-width: 500px;
+    margin: 3em auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-page h1 {
+    color: #004a99;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.auth-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.auth-page label {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.auth-page input {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.auth-page button {
+    padding: 0.8em 1.5em;
+    background-color: #004a99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.auth-page button:hover {
+    background-color: #002d66;
+}
+
+.auth-page .error {
+    color: #d9534f;
+    margin-top: -0.5em;
+    font-size: 0.9em;
+}
+
+.auth-page p {
+    font-size: 1em;
+    margin-top: 1em;
+    color: #555;
+}
+
+.auth-page p a {
+    color: #004a99;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-page p a:hover {
+    color: #002d66;
+}
+
+/* ------------------------ */
+/* Account Page */
+/* ------------------------ */
+.account-page {
+    padding: 2em;
+    max-width: 500px;
+    margin: 3em auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.account-page h1 {
+    color: #004a99;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.account-page .account-details p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    color: #333;
+}
+
+.account-page .account-actions button {
+    margin-top: 1em;
+    padding: 0.8em 2em;
+    background-color: #004a99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.account-page .account-actions button:hover {
+    background-color: #002d66;
+}
+
+
